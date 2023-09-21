@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/workspace/CppND-Capstone-Project/src/main.cpp
+stdlib.h
+-
+iostream
+-
+vector
+-
+board.h
+-
+player.h
+-
+
