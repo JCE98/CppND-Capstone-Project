@@ -5,21 +5,25 @@ using namespace std;
 
 #include<player.h>
 
+//Constructor
 Player::Player()
 {
     _currentPlayer = _players::Opponent;
 };
 
+//Destructor
 Player::~Player()
 {
     
 };
 
+//Getters
 _players Player::getCurrentPlayer()
 {
     return _currentPlayer;
 };
 
+//Setters
 void Player::switchPlayer()
 {
     if (_currentPlayer = _players::User)
@@ -32,7 +36,8 @@ void Player::switchPlayer()
     }
 };
 
-int Player::heuristicFunction(char board[3][3])
+//Supporting Functions
+int heuristicFunction(char board[3][3])
 {
     //Check rows and columns for victory of either player
     for(int idx=0; idx<3; idx++)
@@ -51,8 +56,8 @@ int Player::heuristicFunction(char board[3][3])
         }
     }
     //Check diagonals for victory of either player
-    if((_boardState[0][0] == _boardState[1][1] && _boardState[0][0] == _boardState[2][2]) || 
-    (_boardState[0][2] == _boardState[1][1] && _boardState[0][2] == _boardState[2][0]))
+    if((board[0][0] == board[1][1] && board[0][0] == board[2][2]) || 
+    (board[0][2] == board[1][1] && board[0][2] == board[2][0]))
     {
         if(board[0][0]=='X' || board[0][2]=='X')
         {
@@ -67,9 +72,8 @@ int Player::heuristicFunction(char board[3][3])
     return 0;
 };
 
-int Player::miniMax(char board[3][3], int depth, bool opponentMove)
+int miniMax(char board[3][3], int depth, bool opponentMove)
 {
-    char tempBoard[3][3];
     int bestMoveScore = heuristicFunction(board);
     if(opponentMove)
     {
@@ -83,10 +87,10 @@ int Player::miniMax(char board[3][3], int depth, bool opponentMove)
                 if(!(board[i][j]=='X' || board[i][j]=='O'))
                 {
                     //Make a hypothetical move
-                    tempBoard = copy(begin(board), end(board), begin(tempBoard));
+                    auto tempBoard = board;
                     tempBoard[i][j] = 'O';
                     //Explore outcome by recursive function call
-                    bestMoveScore = max(bestMoveScore,Player::minMax(tempBoard, depth+1, !opponentMove));
+                    bestMoveScore = max(bestMoveScore,miniMax(tempBoard, depth+1, !opponentMove));
                 }
             }
         }
@@ -102,10 +106,10 @@ int Player::miniMax(char board[3][3], int depth, bool opponentMove)
                 if(!(board[i][j]=='X' || board[i][j]=='O'))
                 {
                     //Make a hypothetical move for the user
-                    tempBoard = copy(begin(board), end(board), begin(tempBoard));
+                    auto tempBoard = board;
                     tempBoard[i][j] = 'X';
                     //Explore outcome by recursive function call
-                    bestMoveScore = max(bestMoveScore,Player::minMax(tempBoard, depth+1, !opponentMove));
+                    bestMoveScore = max(bestMoveScore,miniMax(tempBoard, depth+1, !opponentMove));
 
                 }
             }
@@ -114,7 +118,8 @@ int Player::miniMax(char board[3][3], int depth, bool opponentMove)
     return bestMoveScore;
 };
 
-int Player::findBestMove(char board[3][3])
+//Supporting Methods
+int findBestMove(char board[3][3])
 {
     //Algorithm inspired by Ref. [1]
     int bestVal = -1000;
@@ -127,9 +132,9 @@ int Player::findBestMove(char board[3][3])
             //If the position is empty
             if(!(board[i][j]=='X' || board[i][j]=='O'))
             {
-                tempBoard = copy(begin(board), end(board), begin(tempBoard));
+                auto tempBoard = board;
                 tempBoard[i][j] = 'X';
-                int moveVal = Player::minMax(board, 0, true); //Explore this move by calling Player::minMax recursively
+                int moveVal = miniMax(board, 0, true); //Explore this move by calling Player::minMax recursively
                 if(moveVal > bestVal)
                 {
                     bestVal = moveVal;
@@ -143,6 +148,7 @@ int Player::findBestMove(char board[3][3])
 
 int Player::takeTurn(char board[3][3])
 {
+    //_tempBoardState = board;
     if(_currentPlayer = _players::User)
     {
         cout << "Your move: ";
@@ -150,12 +156,7 @@ int Player::takeTurn(char board[3][3])
     }
     else
     {
-        _move = Player::findBestMove(board);
+        _move = findBestMove(board);
     }
     return _move;
 };
-
-/*
-[1] Introduction to Evaluation Function of Minimax Algorithm in Game Theory, GeeksForGeeks.org,
-https://www.geeksforgeeks.org/introduction-to-evaluation-function-of-minimax-algorithm-in-game-theory/
-*/

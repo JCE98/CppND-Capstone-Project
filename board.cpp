@@ -56,9 +56,9 @@ void Board:: displayOutcome(Player player)
     }
 };
 
-char Board::getBoardState()
+auto Board::getBoardState()
 {
-    return _boardState[3][3];
+    return _boardState;
 }
 
 void Board::updateBoard(int move, Player player)

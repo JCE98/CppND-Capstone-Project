@@ -14,7 +14,7 @@ class Board
         //Copy Constructor
         Board(const Board &board);
         //Getters & Setters
-        char getBoardState();
+        auto getBoardState();
         void updateBoard(int move, Player player);
         bool gameStatus();
         void endGame();
