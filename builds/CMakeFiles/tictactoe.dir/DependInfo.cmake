@@ -4,12 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/workspace/CppND-Capstone-Project/src/board.cpp" "/home/workspace/CppND-Capstone-Project/builds/CMakeFiles/tictactoe.dir/src/board.cpp.o"
   "/home/workspace/CppND-Capstone-Project/src/main.cpp" "/home/workspace/CppND-Capstone-Project/builds/CMakeFiles/tictactoe.dir/src/main.cpp.o"
+  "/home/workspace/CppND-Capstone-Project/src/player.cpp" "/home/workspace/CppND-Capstone-Project/builds/CMakeFiles/tictactoe.dir/src/player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../src"
   )
 
 # Targets to which this target links.

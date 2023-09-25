@@ -6,12 +6,34 @@
 
 #IncludeRegexTransform: 
 
-/home/workspace/CppND-Capstone-Project/src/main.cpp
+../src/board.h
 stdlib.h
 -
 iostream
 -
 vector
+-
+player.h
+-
+
+../src/player.h
+stdlib.h
+-
+iostream
+-
+vector
+-
+
+/home/workspace/CppND-Capstone-Project/src/board.cpp
+stdlib.h
+-
+iostream
+-
+vector
+-
+algorithm
+-
+iterator
 -
 board.h
 -

@@ -1,3 +1,6 @@
+#ifndef BOARD_H
+#define BOARD_H
+
 #include <stdlib.h>
 #include<iostream>
 #include<vector>
@@ -26,3 +29,4 @@ class Board
         bool _gameOver;
         bool _draw;
 };
+#endif

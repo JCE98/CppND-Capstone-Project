@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<iterator>
 using namespace std;
 #include<board.h>
 #include<player.h>
@@ -14,10 +15,7 @@ Board::Board()
 };
 
 //Destructor
-Board::~Board()
-{
-    
-};
+Board::~Board(){};
 
 //Copy Constructor
 Board::Board(const Board &board)
@@ -25,7 +23,7 @@ Board::Board(const Board &board)
     copy(begin(board._boardState), end(board._boardState), begin(_boardState));
     _gameOver = board._gameOver;
     _draw = board._draw;
-}
+};
 
 //Supporting Methods
 void Board::displayHeader()
@@ -48,7 +46,7 @@ void Board::displayBoard()
     cout<<"tt     |     |     n";
 };
 
-void Board:: displayOutcome(Player player)
+void Board::displayOutcome(Player player)
 {
     (_draw == true) ? cout<<"nnGAME DRAW!!!nn" : cout<<"nnCongratulations!The" << player.getCurrentPlayer() << " has won the game";
 };
@@ -56,7 +54,7 @@ void Board:: displayOutcome(Player player)
 auto Board::getBoardState()
 {
     return _boardState;
-}
+};
 
 void Board::updateBoard(int move, Player player)
 {

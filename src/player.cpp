@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<iostream>
 #include<vector>
+#include<iterator>
 using namespace std;
 
 #include<player.h>

@@ -1,3 +1,6 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include<stdlib.h>
 #include<iostream>
 #include<vector>
@@ -25,3 +28,4 @@ class Player
         int _move;
         //char _tempBoardState[3][3];
 };
+#endif

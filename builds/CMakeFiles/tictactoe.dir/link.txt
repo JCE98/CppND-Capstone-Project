@@ -1,1 +1,1 @@
-/usr/bin/g++-7  -std=c++17 -g   CMakeFiles/tictactoe.dir/src/main.cpp.o  -o tictactoe 
+/usr/bin/g++-7  -std=c++17   CMakeFiles/tictactoe.dir/src/board.cpp.o CMakeFiles/tictactoe.dir/src/main.cpp.o CMakeFiles/tictactoe.dir/src/player.cpp.o  -o tictactoe 

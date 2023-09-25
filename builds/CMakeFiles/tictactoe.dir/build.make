@@ -57,9 +57,22 @@ include CMakeFiles/tictactoe.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tictactoe.dir/flags.make
 
+CMakeFiles/tictactoe.dir/src/board.cpp.o: CMakeFiles/tictactoe.dir/flags.make
+CMakeFiles/tictactoe.dir/src/board.cpp.o: ../src/board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tictactoe.dir/src/board.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tictactoe.dir/src/board.cpp.o -c /home/workspace/CppND-Capstone-Project/src/board.cpp
+
+CMakeFiles/tictactoe.dir/src/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tictactoe.dir/src/board.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/CppND-Capstone-Project/src/board.cpp > CMakeFiles/tictactoe.dir/src/board.cpp.i
+
+CMakeFiles/tictactoe.dir/src/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tictactoe.dir/src/board.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/CppND-Capstone-Project/src/board.cpp -o CMakeFiles/tictactoe.dir/src/board.cpp.s
+
 CMakeFiles/tictactoe.dir/src/main.cpp.o: CMakeFiles/tictactoe.dir/flags.make
 CMakeFiles/tictactoe.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tictactoe.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tictactoe.dir/src/main.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tictactoe.dir/src/main.cpp.o -c /home/workspace/CppND-Capstone-Project/src/main.cpp
 
 CMakeFiles/tictactoe.dir/src/main.cpp.i: cmake_force
@@ -70,17 +83,34 @@ CMakeFiles/tictactoe.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tictactoe.dir/src/main.cpp.s"
 	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/CppND-Capstone-Project/src/main.cpp -o CMakeFiles/tictactoe.dir/src/main.cpp.s
 
+CMakeFiles/tictactoe.dir/src/player.cpp.o: CMakeFiles/tictactoe.dir/flags.make
+CMakeFiles/tictactoe.dir/src/player.cpp.o: ../src/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tictactoe.dir/src/player.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tictactoe.dir/src/player.cpp.o -c /home/workspace/CppND-Capstone-Project/src/player.cpp
+
+CMakeFiles/tictactoe.dir/src/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tictactoe.dir/src/player.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/CppND-Capstone-Project/src/player.cpp > CMakeFiles/tictactoe.dir/src/player.cpp.i
+
+CMakeFiles/tictactoe.dir/src/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tictactoe.dir/src/player.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/CppND-Capstone-Project/src/player.cpp -o CMakeFiles/tictactoe.dir/src/player.cpp.s
+
 # Object files for target tictactoe
 tictactoe_OBJECTS = \
-"CMakeFiles/tictactoe.dir/src/main.cpp.o"
+"CMakeFiles/tictactoe.dir/src/board.cpp.o" \
+"CMakeFiles/tictactoe.dir/src/main.cpp.o" \
+"CMakeFiles/tictactoe.dir/src/player.cpp.o"
 
 # External object files for target tictactoe
 tictactoe_EXTERNAL_OBJECTS =
 
+tictactoe: CMakeFiles/tictactoe.dir/src/board.cpp.o
 tictactoe: CMakeFiles/tictactoe.dir/src/main.cpp.o
+tictactoe: CMakeFiles/tictactoe.dir/src/player.cpp.o
 tictactoe: CMakeFiles/tictactoe.dir/build.make
 tictactoe: CMakeFiles/tictactoe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tictactoe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/workspace/CppND-Capstone-Project/builds/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tictactoe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tictactoe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
