@@ -24,16 +24,12 @@ iostream
 vector
 -
 
-/home/workspace/CppND-Capstone-Project/src/board.cpp
+/home/workspace/CppND-Capstone-Project/src/main.cpp
 stdlib.h
 -
 iostream
 -
 vector
--
-algorithm
--
-iterator
 -
 board.h
 -

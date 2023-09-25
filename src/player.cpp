@@ -2,9 +2,10 @@
 #include<iostream>
 #include<vector>
 #include<iterator>
-using namespace std;
 
 #include<player.h>
+
+using namespace std;
 
 //Constructor
 Player::Player()
@@ -13,10 +14,7 @@ Player::Player()
 };
 
 //Destructor
-Player::~Player()
-{
-    
-};
+Player::~Player(){};
 
 //Getters
 _players Player::getCurrentPlayer()
@@ -27,18 +25,11 @@ _players Player::getCurrentPlayer()
 //Setters
 void Player::switchPlayer()
 {
-    if (_currentPlayer == _players::User)
-    {
-        _currentPlayer = _players::Opponent;
-    }
-    else
-    {
-        _currentPlayer = _players::User;
-    }
+    _currentPlayer == _players::User ? _currentPlayer = _players::Opponent : _currentPlayer = _players::User;
 };
 
 //Supporting Functions
-int heuristicFunction(char board[3][3])
+int heuristicFunction(vector<vector<char>> board)
 {
     //Check rows and columns for victory of either player
     for(int idx=0; idx<3; idx++)
@@ -73,7 +64,7 @@ int heuristicFunction(char board[3][3])
     return 0;
 };
 
-int miniMax(char board[3][3], int depth, bool opponentMove)
+int miniMax(vector<vector<char>>& board, int depth, bool opponentMove)
 {
     int bestMoveScore = heuristicFunction(board);
     if(opponentMove)
@@ -88,10 +79,9 @@ int miniMax(char board[3][3], int depth, bool opponentMove)
                 if(!(board[i][j]=='X' || board[i][j]=='O'))
                 {
                     //Make a hypothetical move
-                    auto tempBoard = board;
-                    tempBoard[i][j] = 'O';
+                    board[i][j] = 'O';
                     //Explore outcome by recursive function call
-                    bestMoveScore = max(bestMoveScore,miniMax(tempBoard, depth+1, !opponentMove));
+                    bestMoveScore = max(bestMoveScore,miniMax(board, depth+1, !opponentMove));
                 }
             }
         }
@@ -107,10 +97,9 @@ int miniMax(char board[3][3], int depth, bool opponentMove)
                 if(!(board[i][j]=='X' || board[i][j]=='O'))
                 {
                     //Make a hypothetical move for the user
-                    auto tempBoard = board;
-                    tempBoard[i][j] = 'X';
+                    board[i][j] = 'X';
                     //Explore outcome by recursive function call
-                    bestMoveScore = max(bestMoveScore,miniMax(tempBoard, depth+1, !opponentMove));
+                    bestMoveScore = max(bestMoveScore,miniMax(board, depth+1, !opponentMove));
 
                 }
             }
@@ -119,12 +108,12 @@ int miniMax(char board[3][3], int depth, bool opponentMove)
     return bestMoveScore;
 };
 
-int findBestMove(char board[3][3])
+int findBestMove(vector<vector<char>>& board)
 {
     //Algorithm inspired by Ref. [1]
     int bestVal = -1000;
     int bestMove;
-    char tempBoard[3][3];
+    //char tempBoard[3][3];
     for(int i=0; i<3;i++)
     {
         for(int j=0;j<3;j++)
@@ -133,8 +122,8 @@ int findBestMove(char board[3][3])
             if(!(board[i][j]=='X' || board[i][j]=='O'))
             {
                 auto tempBoard = board;
-                tempBoard[i][j] = 'X';
-                int moveVal = miniMax(board, 0, true); //Explore this move by calling Player::minMax recursively
+                tempBoard[i][j] = 'O';
+                int moveVal = miniMax(tempBoard, 0, true); //Explore this move by calling Player::minMax recursively
                 if(moveVal > bestVal)
                 {
                     bestVal = moveVal;
@@ -147,10 +136,9 @@ int findBestMove(char board[3][3])
 };
 
 //Supporting Methods
-int Player::takeTurn(char board[3][3])
+int Player::takeTurn(vector<vector<char>> board)
 {
-    //_tempBoardState = board;
-    if(_currentPlayer = _players::User)
+    if(_currentPlayer == _players::User)
     {
         cout << "Your move: ";
         cin >> _move;

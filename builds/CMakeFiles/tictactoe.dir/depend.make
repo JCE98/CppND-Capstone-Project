@@ -5,7 +5,10 @@ CMakeFiles/tictactoe.dir/src/board.cpp.o: ../src/board.h
 CMakeFiles/tictactoe.dir/src/board.cpp.o: ../src/player.h
 CMakeFiles/tictactoe.dir/src/board.cpp.o: ../src/board.cpp
 
+CMakeFiles/tictactoe.dir/src/main.cpp.o: ../src/board.h
+CMakeFiles/tictactoe.dir/src/main.cpp.o: ../src/player.h
 CMakeFiles/tictactoe.dir/src/main.cpp.o: ../src/main.cpp
 
+CMakeFiles/tictactoe.dir/src/player.cpp.o: ../src/player.h
 CMakeFiles/tictactoe.dir/src/player.cpp.o: ../src/player.cpp
 

@@ -15,9 +15,9 @@ class Board
         Board();
         ~Board();
         //Copy Constructor
-        Board(const Board &board);
+        Board(const Board &source);
         //Getters & Setters
-        auto getBoardState();
+        vector<vector<char>> getBoardState() const;
         void updateBoard(int move, Player player);
         bool gameStatus();
         //Supporting Methods
@@ -25,7 +25,7 @@ class Board
         void displayBoard();
         void displayOutcome(Player player);
     private:
-        char _boardState[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+        vector<vector<char>> _boardState;
         bool _gameOver;
         bool _draw;
 };

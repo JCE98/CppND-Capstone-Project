@@ -10,17 +10,16 @@ int main()
     //Start Game
     Board gameBoard;
     Player player;
-    gameBoard.displayHeader();
-    gameBoard.displayBoard();
 
     //Control-Update-Render Loop
     while (gameBoard.gameStatus() == false)
     {
+        system("clear");
+        gameBoard.displayHeader();
+        gameBoard.displayBoard();
         player.switchPlayer();
         int move = player.takeTurn(gameBoard.getBoardState());
         gameBoard.updateBoard(move,player);
-        gameBoard.displayHeader();
-        gameBoard.displayBoard();
     }
 
     //End Game

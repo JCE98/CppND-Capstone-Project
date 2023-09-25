@@ -6,6 +6,9 @@ CMakeFiles/tictactoe.dir/src/board.cpp.o
  ../src/player.h
  /home/workspace/CppND-Capstone-Project/src/board.cpp
 CMakeFiles/tictactoe.dir/src/main.cpp.o
+ ../src/board.h
+ ../src/player.h
  /home/workspace/CppND-Capstone-Project/src/main.cpp
 CMakeFiles/tictactoe.dir/src/player.cpp.o
+ ../src/player.h
  /home/workspace/CppND-Capstone-Project/src/player.cpp
