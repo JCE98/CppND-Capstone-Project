@@ -72,18 +72,18 @@ The project compiles and runs without errors
     * Break keyword at board.cpp:99
   These are just a few examples of these control structures used throughout the code
 * The project accepts user input and processes the input.
-  This project accepts user input to select a move on the board. This information is parsed into a private class object that holds the state of the board (see player.cpp:179)
+    * This project accepts user input to select a move on the board. This information is parsed into a private class object that holds the state of the board (see player.cpp:179)
   
 ### Object Oriented Programming
 * The project uses Object Oriented Programming techniques.
-  Per the class structure described above, the project uses classes with attributes to store information and methods to do tasks with that information (see player.cpp and board.cpp).
+    * Per the class structure described above, the project uses classes with attributes to store information and methods to do tasks with that information (see player.cpp and board.cpp).
 * Classes use appropriate access specifiers for class members.
-  The header files detail the access specifiers of the class members, private for attributes and public for methods (see player.h:13-25 and board.h:13-30)
+    * The header files detail the access specifiers of the class members, private for attributes and public for methods (see player.h:13-25 and board.h:13-30)
 * Classes abstract implementation details from their interfaces.
-  The class methods are named in such a way that it is clear what they are intended to do. Comments are also generously placed throughout the code for clarification. For example, the getCurrentPlayer method in the Player class is a getter method for the private _currentPlayer attribute (see player.cpp:21)
+    * The class methods are named in such a way that it is clear what they are intended to do. Comments are also generously placed throughout the code for clarification. For example, the getCurrentPlayer method in the Player class is a getter method for the private _currentPlayer attribute (see player.cpp:21)
 * Classes encapsulate behavior.
-  The previous example also satisfies this rubric. The private member attribute is hidden from the user (abstracted), and can only be accessed with the public method. The class structure defined above shows that behaviors related to one another were encapsulated in classes.
+    * The previous example also satisfies this rubric. The private member attribute is hidden from the user (abstracted), and can only be accessed with the public method. The class structure defined above shows that behaviors related to one another were encapsulated in classes.
 
 ### Memory Management
 * The project makes use of references in function declarations.
-  Supporting functions in the Player class use pass by reference in the recursive function calls to avoid computationally intensive copies of the board state when exploring all possible moves (see player.cpp:93 and player.cpp:146)
+    * Supporting functions in the Player class use pass by reference in the recursive function calls to avoid computationally intensive copies of the board state when exploring all possible moves (see player.cpp:93 and player.cpp:146)
