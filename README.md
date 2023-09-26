@@ -1,5 +1,5 @@
 # CppND-Capstone-Project
-This is my capstone project for the C++ nanodegree from Udacity. The project is a tic-tac-toe game that can be played in the terminal.
+This is my capstone project for the C++ nanodegree from Udacity. The project is a tic-tac-toe game that can be played in the terminal [1].
 
 ![image](https://github.com/JCE98/CppND-Capstone-Project/assets/143748618/caba7f34-2508-454e-a4af-71a206c9f620)
 
@@ -87,3 +87,10 @@ The project compiles and runs without errors
 ### Memory Management
 * The project makes use of references in function declarations.
     * Supporting functions in the Player class use pass by reference in the recursive function calls to avoid computationally intensive copies of the board state when exploring all possible moves (see player.cpp:93 and player.cpp:146)
+
+# References
+[1] 'C++ Tic Tac Toe Game Project', STechies.com, 13 Nov 2020, https://www.stechies.com/tic-tac-toe-cpp/
+[2] 'Introduction to Evaluation Function of Minimax Algorithm in Game Theory', GeeksForGeeks.org,
+https://www.geeksforgeeks.org/introduction-to-evaluation-function-of-minimax-algorithm-in-game-theory/
+[3] 'Finding optimal move in Tic-Tac-Toe using Minimax Algorithm in Game Theory', GeeksForGeeks.org,
+https://www.geeksforgeeks.org/finding-optimal-move-in-tic-tac-toe-using-minimax-algorithm-in-game-theory/
