@@ -23,6 +23,9 @@ int main()
     }
 
     //End Game
+    system("clear");
+    gameBoard.displayHeader();
+    gameBoard.displayBoard();
     gameBoard.displayOutcome(player);
     return 0;
 };

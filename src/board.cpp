@@ -33,7 +33,7 @@ void Board::displayHeader()
 {
     cout<<"\tT I C -- T A C -- T O E -- G A M E\t\t\t";
     //cout<<"\n\t\t\t\tFOR 2 PLAYERS\n\t\t\t";
-    cout<<"\n\t\tUser [X]\tOpponent [O]\n\n";
+    cout<<"\n\t   User [X]\tOpponent [O]\n\n";
 };
 
 void Board::displayBoard()
@@ -51,7 +51,15 @@ void Board::displayBoard()
 
 void Board::displayOutcome(Player player)
 {
-    (_draw == true) ? cout << "\n\nGAME DRAW!!!\n\n" : cout << "\n\nCongratulations! The " << player.getCurrentPlayer() << " has won the game\n";
+    if(_draw == true)
+    {
+        cout << "\n\nGAME DRAW!!!\n\n";
+    }
+    else
+    {
+        player.getCurrentPlayer() == _players::User ? cout << "\n\nCongratulations! You have" : cout << "\n\nBetter luck next time. Your Opponent has";
+        cout << " won the game" << endl;
+    }
 };
 
 vector<vector<char>> Board::getBoardState() const
@@ -65,6 +73,7 @@ void Board::updateBoard(int move, Player player)
     //Determine which mark to apply
     char mark;
     (player.getCurrentPlayer() == _players::User) ? mark = 'X' : mark = 'O';
+    //Infinite loop to account for bad user entries
     while(true)
     {
         //Convert numbered box selected to board grid coordinates
@@ -79,12 +88,23 @@ void Board::updateBoard(int move, Player player)
             case 8: row=2; column=1; break;
             case 9: row=2; column=2; break;
             default:
-                cout<<"Invalid Move";
+            {
+                //User enters something other than one of the numbered spots on the board
+                while(true)
+                {
+                    //Keep requesting another move until a valid move is entered
+                    cout << "Please enter a move number 1-9: ";
+                    cin >> move;
+                    cout << endl;
+                    if(move>=1 && move <=9){break;}
+                }
+                continue;
+            }
         }
         //If the spot is already filled
         if (_boardState[row][column] == 'X' || _boardState[row][column] =='O')
         {
-            //Invalid move, request another until valid move is entered
+            //Unavailable move, request another until available move is entered
             cout << "Position already filled! Please choose another: ";
             cin >> move;
             cout << endl;
@@ -116,7 +136,7 @@ bool Board::gameStatus()
     }
     //Checking for a draw
     bool remainingMoves = false; //Assume there are no more ways to win until one is found
-    for(auto mark : {'O','X'}) //Check for both player and opponent
+    for(auto mark : {'O','X'}) //Check for both user and opponent
     {
         for(int idx=0; idx<3; idx++)
         {
