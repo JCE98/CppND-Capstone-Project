@@ -12,30 +12,30 @@ The heuristic function used for the algorithm rewards a victory by the computer,
 There are two classes utilized in this project: the Board class and the Player class. Below is a breakdown of the methods and attributes associated with each.
 
 Board class
-  Attributes:
-    _boardState  -  The current state of the board as an array containing the applied markers from the user's and the computer's moves, and numbered spots for any spots that are empty
-    _gameOver    -  A flag to indicate that the game has reached a terminal state
-    _draw        -  A flag to indicate that the game has ended in a draw
-  Methods:
-    getBoardState    -  Getter method for the _boardState attribute
-    updateBoard      -  Setter that uses information about the most recent move and the player who made it to update the _boardState attribute with the appropriate marker
-    gameStatus       -  Setter to check for victory by either player, or a draw, and set the _gameOver and _draw attribute flags appropriately
-    displayHeader    -  Display game title header and marker legend in the terminal
-    displayBoard     -  Display the current state of the board (_boardState attribute) to the terminal in a graphical way
-    displayOutcome   -  Print the outcome of the game to the terminal once the game has ended
+  * Attributes:
+  	* _boardState  -  The current state of the board as an array containing the applied markers from the user's and the computer's moves, and numbered spots for any spots that are empty
+  	* _gameOver    -  A flag to indicate that the game has reached a terminal state
+  	* _draw        -  A flag to indicate that the game has ended in a draw
+  * Methods:
+  	* getBoardState    -  Getter method for the _boardState attribute
+  	* updateBoard      -  Setter that uses information about the most recent move and the player who made it to update the _boardState attribute with the appropriate marker
+  	* gameStatus       -  Setter to check for victory by either player, or a draw, and set the _gameOver and _draw attribute flags appropriately
+  	* displayHeader    -  Display game title header and marker legend in the terminal
+  	* displayBoard     -  Display the current state of the board (_boardState attribute) to the terminal in a graphical way
+  	* displayOutcome   -  Print the outcome of the game to the terminal once the game has ended
 
 Player class
-  Attributes:
-    _currentPlayer    -  An enum to identify whose turn it is that can take the values User or Opponent
-    _move             -  The numbered spot on a 1-9 grid that is selected as the next move
-  Methods:
-    switchPlayer      -  Setter to toggle the enum _currentPlayer to change whose turn it is
-    getCurrentPlayer  -  Getter for the _currentPlayer attribute
-    takeTurn          -  Setter to update _move attribute by either prompt the user for a move, or initiate the minimax algorithm for the computer to select a move
-  Supporting Functions:
-    heuristicFunction -  Defines rewards and penalties for moves that lead to board states
-    miniMax           -  Recursively called function that extrapolates moves for both players by comparing the heuristic function scores of all possible moves to select the best move
-    findBestMove      -  Wrapper for the minimax algorithm that iterates through all possible first moves based on the _boardState to initiate the algorithm
+  * Attributes:
+  	* _currentPlayer    -  An enum to identify whose turn it is that can take the values User or Opponent
+  	* _move             -  The numbered spot on a 1-9 grid that is selected as the next move
+  * Methods:
+  	* switchPlayer      -  Setter to toggle the enum _currentPlayer to change whose turn it is
+  	* getCurrentPlayer  -  Getter for the _currentPlayer attribute
+  	* takeTurn          -  Setter to update _move attribute by either prompt the user for a move, or initiate the minimax algorithm for the computer to select a move
+  * Supporting Functions:
+  	* heuristicFunction -  Defines rewards and penalties for moves that lead to board states
+  	* miniMax           -  Recursively called function that extrapolates moves for both players by comparing the heuristic function scores of all possible moves to select the best move
+  	* findBestMove      -  Wrapper for the minimax algorithm that iterates through all possible first moves based on the _boardState to initiate the algorithm
 
 ## File Structure
 There are three cpp files and two header files included with this project. The two header files (board.h and player.h) provide the structure for the classes described above. Two of the cpp files (board.cpp and player.cpp) contain the implementation of those classes. The last cpp file (main.cpp) is the primary code run when the program is executed that contains the game loop utilizing these classes to play the game.
