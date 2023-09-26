@@ -90,7 +90,9 @@ The project compiles and runs without errors
 
 # References
 [1] 'C++ Tic Tac Toe Game Project', STechies.com, 13 Nov 2020, https://www.stechies.com/tic-tac-toe-cpp/
+
 [2] 'Introduction to Evaluation Function of Minimax Algorithm in Game Theory', GeeksForGeeks.org,
 https://www.geeksforgeeks.org/introduction-to-evaluation-function-of-minimax-algorithm-in-game-theory/
+
 [3] 'Finding optimal move in Tic-Tac-Toe using Minimax Algorithm in Game Theory', GeeksForGeeks.org,
 https://www.geeksforgeeks.org/finding-optimal-move-in-tic-tac-toe-using-minimax-algorithm-in-game-theory/
